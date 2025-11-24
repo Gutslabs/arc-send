@@ -144,6 +144,17 @@ export default function App() {
 
   const handleMint = async () => {
     if (!wallet) return
+
+    if (circleBalance <= 0) {
+      toast.error("No Circle USDC for Gas!", {
+        description: "You need Circle USDC to pay for gas fees.",
+        action: {
+          label: 'Get Faucet',
+          onClick: () => window.open("https://faucet.circle.com", "_blank")
+        }
+      })
+      return
+    }
     setLoading(true)
     const toastId = toast.loading("Minting 10,000 USDC...")
     try {
