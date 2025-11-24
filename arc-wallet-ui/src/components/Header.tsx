@@ -28,9 +28,13 @@ export default function Header({ exportWallet, handleMint, loading }: HeaderProp
                 >
                     Mint
                 </button>
-                <button className="bg-white hover:bg-gray-200 text-black px-5 py-2 rounded-xl text-sm font-bold transition-all shadow-lg hover:scale-105 active:scale-95">
-                    Deposit
+                <button
+                    onClick={() => window.open("https://faucet.circle.com", "_blank")}
+                    className="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all border border-white/10 hover:border-white/20 hover:scale-105 active:scale-95"
+                >
+                    Faucet
                 </button>
+
             </div>
         </header>
     )

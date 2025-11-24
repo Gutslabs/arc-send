@@ -509,6 +509,10 @@ export default function App() {
           setSelectedTx={setSelectedTx}
           address={address}
         />
+
+        <footer className="text-center py-6 text-circle-muted text-xs font-medium opacity-50 hover:opacity-100 transition-opacity">
+          Built by <span className="text-white">Gutslab</span>
+        </footer>
       </main>
     </div>
   )
