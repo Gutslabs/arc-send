@@ -191,9 +191,9 @@ export default function App() {
     } catch (error: any) {
       console.error("Mint failed:", error)
       if (error.code === 'INSUFFICIENT_FUNDS') {
-        toast.error("Insufficient ETH for Gas!", {
+        toast.error("Insufficient USDC for Gas!", {
           id: toastId,
-          description: "You need ETH to pay for gas fees.",
+          description: "You need USDC to pay for gas fees.",
           action: {
             label: 'Get Gas',
             onClick: () => window.open("https://faucet.circle.com", "_blank")
@@ -360,9 +360,9 @@ export default function App() {
     } catch (error: any) {
       console.error("Transfer failed:", error)
       if (error.code === 'INSUFFICIENT_FUNDS') {
-        toast.error("Insufficient ETH for Gas!", {
+        toast.error("Insufficient USDC for Gas!", {
           id: toastId,
-          description: "You need ETH to pay for gas fees.",
+          description: "You need USDC to pay for gas fees.",
           action: {
             label: 'Get Gas',
             onClick: () => window.open("https://faucet.circle.com", "_blank")
@@ -435,9 +435,9 @@ export default function App() {
     } catch (error: any) {
       console.error("Repeat transfer failed:", error)
       if (error.code === 'INSUFFICIENT_FUNDS') {
-        toast.error("Insufficient ETH for Gas!", {
+        toast.error("Insufficient USDC for Gas!", {
           id: toastId,
-          description: "You need ETH to pay for gas fees.",
+          description: "You need USDC to pay for gas fees.",
           action: {
             label: 'Get Gas',
             onClick: () => window.open("https://faucet.circle.com", "_blank")
