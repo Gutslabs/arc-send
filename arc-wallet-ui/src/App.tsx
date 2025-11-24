@@ -49,13 +49,18 @@ export default function App() {
       let newWallet
       if (storedKey) {
         newWallet = new ethers.Wallet(storedKey, _provider)
-        setWallet(newWallet)
-        setAddress(newWallet.address)
-        fetchBalances(newWallet.address, _provider)
       } else {
-        if (!tutorialCompleted) {
-          setShowWelcome(true)
-        }
+        // Generate new wallet if none exists
+        newWallet = ethers.Wallet.createRandom(_provider)
+        localStorage.setItem('arc_wallet_pk', newWallet.privateKey)
+      }
+
+      setWallet(newWallet)
+      setAddress(newWallet.address)
+      fetchBalances(newWallet.address, _provider)
+
+      if (!storedKey && !tutorialCompleted) {
+        setShowWelcome(true)
       }
     }
     init()
